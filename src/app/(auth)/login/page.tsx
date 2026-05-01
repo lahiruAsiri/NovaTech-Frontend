@@ -30,7 +30,7 @@ export default function LoginPage() {
       
       toast.success('Login successful!');
       
-      if (user.role === 'ADMIN') {
+      if (user.roleId === 1 || user.role === 'ADMIN') {
         window.location.href = '/admin/dashboard';
       } else {
         window.location.href = '/'; 
