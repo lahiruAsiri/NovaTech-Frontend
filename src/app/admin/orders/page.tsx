@@ -72,8 +72,8 @@ export default function AdminOrdersPage() {
         </div>
       </div>
 
-      <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/40 border border-gray-100 overflow-visible">
-        <div className="overflow-x-auto overflow-y-visible">
+      <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/40 border border-gray-100 min-h-[500px]">
+        <div className="overflow-visible">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[0.65rem] uppercase tracking-[0.2em] font-bold">
@@ -85,7 +85,7 @@ export default function AdminOrdersPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
-              {orders.map(o => {
+              {orders.map((o) => {
                 const Config = statusConfig[o.status] || { color: 'bg-gray-100 text-gray-700', icon: Clock };
                 const StatusIcon = Config.icon;
 
@@ -124,7 +124,7 @@ export default function AdminOrdersPage() {
                         <span className="text-[0.7rem] font-bold tracking-widest uppercase">{o.status}</span>
                       </div>
                     </td>
-                    <td className="px-10 py-7 text-right relative overflow-visible">
+                    <td className="px-10 py-7 text-right relative">
                       {updatingId === o.id ? (
                         <div className="flex justify-end pr-8">
                            <Loader2 className="w-6 h-6 animate-spin text-indigo-600" />
