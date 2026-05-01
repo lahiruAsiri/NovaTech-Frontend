@@ -5,7 +5,7 @@ export const adminService = {
     const res = await apiClient.get('/api/admin-admin/users');
     return res.data.map((u: any) => ({
       ...u,
-      role: u.role?.name || (u.roleId === 3 ? 'ADMIN' : 'USER')
+      role: u.role?.name || (u.roleId === 1 ? 'ADMIN' : 'USER')
     }));
   },
   
