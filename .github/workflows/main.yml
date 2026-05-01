@@ -35,3 +35,7 @@ jobs:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME_FRONTEND }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_FRONTEND }}
           package: .
+          clean: true
+          # We will let Azure Oryx handle the build if needed, 
+          # but to avoid the hang, we ensure we aren't zipping massive unnecessary files.
+
