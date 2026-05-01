@@ -21,7 +21,7 @@ export const authService = {
   getProfile: async (): Promise<UserProfile> => {
     const res = await apiClient.get('/api/admin-users/profile');
     const user = res.data;
-    const roleStr = user.role?.name || (user.roleId === 3 ? 'ADMIN' : 'USER');
+    const roleStr = user.role?.name || (user.roleId === 1 ? 'ADMIN' : 'USER');
     const name = user.profile?.name || user.name || 'User';
     return { ...user, role: roleStr, name };
   },
